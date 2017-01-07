@@ -16,6 +16,7 @@ class Test(unittest.TestCase):
         IP = ipgetter.myip()
         self.assertTrue( ip != str(IP), "Failed to hide ip %s" % IP)
 
+        
 
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.test_not_my_home_ip']
