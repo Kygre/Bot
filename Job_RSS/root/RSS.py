@@ -13,6 +13,7 @@ from pprint import pprint
 from test.test_xml_etree import ET
 
 import requests
+import sqlite3
 
 
 class Feed_Bot(object, metaclass= ABCMeta):
@@ -62,7 +63,7 @@ class Upwork_Bot(Feed_Bot):
         super().__init__(feed)
         self.parse_dict = ['rss','channel', 'item']
         self.target = target
-        
+        self.db = sqlite3.connect(':in')
         def build_scrape(self):
             xml = requests.get(self.feed)
             tree = ET.parse(xml.text)
